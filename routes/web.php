@@ -39,6 +39,5 @@ Route::get('/search', [ProductController::class, 'search'])->name('products.sear
 Route::get('/send-mail', function () {
     $user = App\Models\User::find(8);
     Mail::to($user->email)->send(new WelcomeMail($user));
-
     return "Email sent successfully";
 });
