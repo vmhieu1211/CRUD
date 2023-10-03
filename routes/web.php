@@ -19,7 +19,7 @@ Route::group(['middleware' => 'CheckLogout'], function () {
     Route::get('/logout', [LoginController::class, 'loginForm'])->name('loginForm');
     Route::post('/logout', [LoginController::class, 'logoutSubmit'])->name('logoutSubmit');
 });
-
+Route::post('/users', [UserController::class, 'store'])->name('users.store');
 Route::middleware(['CheckLogin'])->group(function () {
     Route::resource('users', UserController::class);
     Route::resource('products', ProductController::class);
