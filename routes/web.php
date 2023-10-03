@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Route;
 
 
 
-
 Route::get('/login', [LoginController::class, 'loginForm'])->name('loginForm');
 Route::post('/login', [LoginController::class, 'loginSubmit'])->name('login.submit');
 
@@ -21,12 +20,12 @@ Route::group(['middleware' => 'CheckLogout'], function () {
     Route::post('/logout', [LoginController::class, 'logoutSubmit'])->name('logoutSubmit');
 });
 
-// Route::middleware(['CheckLogin'])->group(function () {
+Route::middleware(['CheckLogin'])->group(function () {
     Route::resource('users', UserController::class);
     Route::resource('products', ProductController::class);
     Route::resource('roles', RoleController::class);
     Route::resource('permissions', PermissionController::class);
-// });
+});
 
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
