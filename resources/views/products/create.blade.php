@@ -42,7 +42,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="input-group">
                     <span class="input-group-btn">
-                        <a id="lfm" data-input="images" data-preview="holder" class="btn btn-primary">
+                        <a id="my-editor" data-input="images" data-preview="holder" class="btn btn-primary">
                             <i class="fa fa-picture-o"></i> Choose
                         </a>
                     </span>
@@ -56,6 +56,9 @@
         </div>
     </form>
 
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('my-editor');
+    </script>
 @endsection
-
