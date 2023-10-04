@@ -58,7 +58,9 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+    <script src="https://cdn.ckbox.io/ckbox/2.1.0/ckbox.js"></script>
     <script>
         CKEDITOR.replace('my-editor');
     </script>
+
 @endsection

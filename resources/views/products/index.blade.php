@@ -112,5 +112,4 @@
     </table>
     {!! $products->links() !!}
 
-    
 @endsection
