@@ -15,8 +15,8 @@
                     <a class="btn btn-success" href="{{ route('logoutSubmit') }}"> Logout</a>
                 @endif
 
-                <p>Logged in as: {{ auth()->user()->name }}</p>
-                <p>Role: {{ auth()->user()->roles->pluck('name')->implode(', ') }}</p>
+                 <p>Logged in as: {{ auth()->user()->name }}</p>
+                <p>Role: {{ auth()->user()->roles->pluck('name')->implode(', ') }}</p> 
 
             </div>
         </div>
