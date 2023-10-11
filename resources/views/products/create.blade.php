@@ -55,6 +55,7 @@
             </div>
         </div>
     </form>
+
     <script>
         var options = {
             filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
@@ -64,7 +65,7 @@
         };
     </script>
     <script>
-        CKEDITOR.replace('my-editor');
+        CKEDITOR.replace('my-editor', options);
     </script>
 
 @endsection
