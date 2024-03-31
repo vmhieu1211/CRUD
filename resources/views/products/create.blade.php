@@ -42,11 +42,11 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="input-group">
                     <span class="input-group-btn">
-                        <a id="my-editor" data-input="images" data-preview="holder" class="btn btn-primary">
-                            <i class="fa fa-picture-o"></i> Choose
+                        <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
+                            <i class="fa fa-picture-o"></i> {{ __('welcome.choose') }}
                         </a>
                     </span>
-                    <input id="images" class="form-control" type="text" name="images">
+                    <input id="thumbnail" class="form-control" type="text" name="filepath">
                 </div>
                 <img id="holder" style="margin-top:15px;max-height:100px;">
             </div>
@@ -55,17 +55,18 @@
             </div>
         </div>
     </form>
-
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.0.0/classic/ckeditor.js"></script>
     <script>
-        var options = {
-            filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
-            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
-            filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
-            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
-        };
+        ClassicEditor
+            .create( document.querySelector( '#my-editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
     </script>
+    <script src="{{ asset('vendor/laravel-filemanager/js/file-manager.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
-        CKEDITOR.replace('my-editor', options);
+        $('#lfm').filemanager('image');
     </script>
 
 @endsection

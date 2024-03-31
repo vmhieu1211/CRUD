@@ -10,7 +10,9 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 
-
+Route::get('home', function () {
+    return view('welcome');
+});
 Route::get('/login', [LoginController::class, 'loginForm'])->name('loginForm');
 Route::post('/login', [LoginController::class, 'loginSubmit'])->name('login.submit');
 

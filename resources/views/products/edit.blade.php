@@ -58,5 +58,13 @@
             </div>
         </div>
     </form>
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.0.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#my-editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
 @endsection
 
